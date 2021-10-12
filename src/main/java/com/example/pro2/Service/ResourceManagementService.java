@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class ResourceManagementService {
     Memory memory = new Memory(50);
-    //public static  int mem = 50;
+
     Logger logger = LoggerFactory.getLogger(Service.class);
     private static List<Servers> serversIN = new ArrayList<>();
     private static final Map<Integer, Servers> pendingThread = new ConcurrentHashMap<>();
@@ -53,24 +53,12 @@ public class ResourceManagementService {
                     + " so wait some  time to request another server");
             Thread.sleep(20000);
             memory.setSize(50);
-           // pendingThread.put(id, new Servers(id, amount));
+            // pendingThread.put(id, new Servers(id, amount));
             logger.info(" resetting the memory " + memory.getSize());
             allocate(id, amount);
 
 
         }
     }
-
-  /*  @Async
-    public void checkList() throws InterruptedException {
-
-        for (int i = 0 ; i< pendingThread.size();i++){
-            if(pendingThread.get(i).getAllocationSize() < memory.getSize())
-                allocate(pendingThread.get(i).getId(), pendingThread.get(i).getAllocationSize());
-
-        }
-
-    }
-*/
 
 }

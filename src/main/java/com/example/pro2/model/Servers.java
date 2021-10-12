@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class Servers {
     int id;
-    int allocationSize;
+    int amount;
 
-    public Servers(int id, int allocationSize) {
+    public Servers(int id, int amount) {
         this.id = id;
-        this.allocationSize = allocationSize;
+        this.amount = amount;
     }
 }
